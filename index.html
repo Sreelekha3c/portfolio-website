@@ -4,134 +4,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Global Styles */
+        :root {
+            --pastel-green: #a8d5ba;
+            --text-color: #333;
+            --btn-color: #86c79a;
+            --btn-hover-color: #75b388;
+        }
+
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f4f8f4;
-            color: #333;
+            line-height: 1.6;
+            background-color: var(--pastel-green);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #dff1e1;
         }
 
         .btn-custom {
-            background-color: #8fbc8f;
+            background-color: var(--btn-color);
             color: #fff;
             border: none;
-            transition: background-color 0.3s ease;
+            border-radius: 5px;
+            padding: 0.75rem 1.5rem;
+            transition: background-color 0.3s;
         }
 
         .btn-custom:hover {
-            background-color: #7aa87a;
+            background-color: var(--btn-hover-color);
         }
 
-        .hero-section {
-            text-align: center;
-            background-color: #8fbc8f;
-            color: #fff;
+        .about, .skills, .contact {
             padding: 100px 0;
         }
 
-        .skills-section {
-            background-color: #dcedd3;
+        .about {
+            background-color: #cfead5;
+        }
+
+        .skills {
+            background-color: #dff1e1;
+        }
+
+        .contact {
+            background-color: #cfead5;
         }
 
         .footer {
-            background-color: #8fbc8f;
-            color: #fff;
+            background-color: var(--pastel-green);
             text-align: center;
-            padding: 20px 0;
+            padding: 1rem 0;
         }
 
-        .navbar-custom {
-            background-color: #8fbc8f;
-        }
-
-        .navbar-custom .nav-link {
-            color: #fff;
-            transition: color 0.3s ease;
-        }
-
-        .navbar-custom .nav-link:hover {
-            color: #f4f8f4;
+        form input, form textarea {
+            margin-bottom: 1rem;
         }
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--pastel-green);">
         <div class="container">
-            <a class="navbar-brand text-white" href="#">MyPortfolio</a>
+            <a class="navbar-brand" href="#">My Portfolio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#hero">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero-section">
+    <section id="hero" class="hero text-center">
         <div class="container">
             <h1>Welcome to My Portfolio</h1>
-            <p>I'm a passionate web developer dedicated to creating amazing websites.</p>
+            <p>Your journey to knowing me better starts here.</p>
             <a href="#about" class="btn btn-custom">Learn More</a>
-            <button id="downloadResume" class="btn btn-custom">Download My Resume</button>
+            <button class="btn btn-custom" id="downloadResume">Download My Resume</button>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container text-center">
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
             <h2>About Me</h2>
-            <p>Hello! I'm a web developer with a knack for designing user-friendly and responsive websites. I specialize in HTML, CSS, and JavaScript to bring ideas to life on the web.</p>
+            <p>Hello! I'm a web developer passionate about creating functional and aesthetically pleasing websites. I enjoy solving problems and bringing ideas to life on the web.</p>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills-section py-5">
-        <div class="container text-center">
+    <section id="skills" class="skills">
+        <div class="container">
             <h2>My Skills</h2>
             <div class="row">
-                <div class="col-md-4">HTML5</div>
-                <div class="col-md-4">CSS3</div>
+                <div class="col-md-4">HTML & CSS</div>
                 <div class="col-md-4">JavaScript</div>
+                <div class="col-md-4">React.js</div>
+                <div class="col-md-4">Node.js</div>
                 <div class="col-md-4">Responsive Design</div>
-                <div class="col-md-4">Version Control (Git)</div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container text-center">
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact">
+        <div class="container">
             <h2>Contact Me</h2>
-            <form class="row g-3">
-                <div class="col-md-6">
-                    <input type="text" class="form-control" placeholder="Your Name" required>
+            <form action="#" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
                 </div>
-                <div class="col-md-6">
-                    <input type="email" class="form-control" placeholder="Your Email" required>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
                 </div>
-                <div class="col-12">
-                    <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message:</label>
+                    <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
                 </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-custom">Send Message</button>
-                </div>
+                <button type="submit" class="btn btn-custom w-100">Send</button>
             </form>
         </div>
     </section>
@@ -139,17 +148,20 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 MyPortfolio. All rights reserved.</p>
+            <p>&copy; 2025 My Portfolio. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.getElementById('downloadResume').addEventListener('click', function() {
             const link = document.createElement('a');
-            link.href = 'resume.pdf';
+            link.href = 'resume.pdf'; // Path to the resume file
             link.download = 'My_Resume.pdf';
+            document.body.appendChild(link);
             link.click();
+            document.body.removeChild(link);
         });
     </script>
 </body>
